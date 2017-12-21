@@ -7,6 +7,8 @@ Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 ```
 
+## js在字符串和数组之间来回转换 投机取巧的做法 leetcode测试用例1560 号没通过，结果出现NaN
+```javascript
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -19,8 +21,6 @@ Explanation: 342 + 465 = 807.
  * @param {ListNode} l2
  * @return {ListNode}
  */
-
-//js在字符串和数组之间来回转换 投机取巧的做法 leetcode测试用例1560 号没通过，结果出现NaN
 var addTwoNumbers = function(l1, l2) {
     function getNumber(l) {
         var temp = [];
@@ -44,3 +44,23 @@ var addTwoNumbers = function(l1, l2) {
     }
     return result[l-1];
 };
+```
+
+## 正常解法
+```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var addTwoNumbers = function(l1, l2) {
+
+}
+```
