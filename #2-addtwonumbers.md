@@ -46,7 +46,7 @@ var addTwoNumbers = function(l1, l2) {
 };
 ```
 
-## 正常解法
+## 正常解法 递归
 ```javascript
 /**
  * Definition for singly-linked list.
@@ -60,7 +60,22 @@ var addTwoNumbers = function(l1, l2) {
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function(l1, l2) {
-
-}
+var addOperation = function(l1, l2, carry) {  
+    if (!l1 && !l2 && !carry) {  
+        return null;  
+    }  
+    l1 = l1 || new ListNode(0);  
+    l2 = l2 || new ListNode(0);  
+    carry = carry || 0;  
+    let l3 = new ListNode((l1.val + l2.val + carry)%10);  
+    carry = parseInt((l1.val + l2.val + carry)/10);  
+    if (l1.next || l2.next || carry) {  
+        l3.next = addOperation(l1.next, l2.next, carry);      
+    }  
+    return l3;  
+}  
+   
+var addTwoNumbers = function(l1, l2) {  
+    return addOperation(l1, l2);  
+};
 ```
